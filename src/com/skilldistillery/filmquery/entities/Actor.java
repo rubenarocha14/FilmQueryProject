@@ -3,19 +3,20 @@ package com.skilldistillery.filmquery.entities;
 import java.util.Objects;
 
 public class Actor {
-	//create fields to correspond to db table columns
+	// create fields to correspond to db table columns
 	private int id;
 	private String firstName;
 	private String lastName;
-	//default ctor
+
+	// default ctor
 	public Actor() {
-		
+
 	}
-	
+
 	public Actor(int id, String fn, String ln) {
 		this.id = id;
 		this.firstName = fn;
-		this.lastName  =ln;
+		this.lastName = ln;
 	}
 
 	public int getId() {
@@ -61,7 +62,7 @@ public class Actor {
 
 	@Override
 	public String toString() {
-		return "Actor Info: \n------------------\n Id: " + id + "\n First Name: " + firstName + "\n Last Name: " + lastName;
+		return firstName + lastName + "\n";
 	}
 
 }

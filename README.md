@@ -1,8 +1,21 @@
 # FilmQueryProject
 
+# DESCRIPTION UPDATE
+The program now has complete functionality with a couple caveats. The primary issue with the program is if a
+user inputs a non-integer number at any point other than entering in the "keyword search" the program will crash. 
+I tried certain chunks of code in try/catch blocks to prevent displaying the scary red alerts to the user, however
+when I did so the program would get stuck in a error loop. Moving onto the functionality that was corrected. The 
+biggest issue was my SQL statements. This took me a while to nail down, because I was able to get the expected outcome
+when entering smaller SQL requests, but when I formed more complex duel and tri joins in a single SQL statement I 
+ended up with several errors. I figured it out in the end and was able to get all necessary fields displayed to the user.
+The other major issue I needed to correct was getting the list of actors displayed to the user when they selected a film.
+I was able to accomplish this by simply creating a new list of Actors within my FilmQueryApp which called the 
+findActorsByFilmId(int) from the DAO. I wasn't able to make it more dry by having the actor as a film field, but I was able 
+to get the actors displayed to the user. Other issues that were resolved were primarily related to syntax. 
+
 # Description:
 This project is meant to combine our knowledge of accessing data from a database 
-and displaying it to the user properyly, and safely.We began by creating 3 separate 
+and displaying it to the user properly, and safely.We began by creating 3 separate 
 packages that allowed us to keep our database accessing info separate from our app
  classes. In the entities package we have our Actor and Film classes. These classes
  were meant to translate the Actor and Film tables from the database into java classes.
@@ -45,12 +58,18 @@ packages that allowed us to keep our database accessing info separate from our a
  prompts a custom exception message. 
  
  Once the user selects to exit the app, a goodbye message will be displayed.
+ 
 
 
 #Technology Used:
 Eclipse, Atom, Terminal, mySQL, stackOverflow, YouTube
 MAMP
 
+#LESSONS LEARNED UPDATE:
+Working through this assignment helped me conceptualize a lot of key aspects of Relational Mapping that was missing. 
+I was able to get a better understanding of the syntax errors I was making, as well as the relationship between
+the DAO and database. There were a lot of moving parts that I was having trouble wrapping my head around, but I feel 
+confident in my corrections and understanding of the material. 
 #Lessons Learned:
 
 I had a lot more trouble with this project that I was expecting to, particularly implementing the scanner and 

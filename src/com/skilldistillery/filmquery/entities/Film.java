@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Objects;
 
 public class Film {
-	//create field corresponding w/ db
 	private int id;
 	private String title;
 	private String description;
 	private int releaseYear;
 	private int languageId;
+	private String languageName;
 	private int rentalDuration;
 	private double rentalRate;
 	private int length;
@@ -17,8 +17,9 @@ public class Film {
 	private String rating;
 	private String specialFeatures;
 	private List<Actor> actors;
-	
+
 	public List<Actor> getActors() {
+
 		return actors;
 	}
 
@@ -27,10 +28,10 @@ public class Film {
 	}
 
 	public Film() {
-		
+
 	}
-	
-	public Film(int id, String title, String desc, int relYr, int langId, int rentDur, double rentRate, int len,  
+
+	public Film(int id, String title, String desc, int relYr, int langId, int rentDur, double rentRate, int len,
 			double replaceCost, String rtg, String specFeat) {
 		this.id = id;
 		this.title = title;
@@ -40,13 +41,29 @@ public class Film {
 		this.rentalDuration = rentDur;
 		this.rentalRate = rentRate;
 		this.length = len;
-		this.replacementCost= replaceCost;
+		this.replacementCost = replaceCost;
 		this.rating = rtg;
 		this.specialFeatures = specFeat;
-		
+
 	}
 
-
+	public Film(List<Actor> actors, int id, String title, String description, int releaseYear, int languageId,
+			int rentalDuration, double rentalRate, int length, double replacementCost, String rating,
+			String specialFeatures) {
+		super();
+		this.actors = actors;
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.releaseYear = releaseYear;
+		this.languageId = languageId;
+		this.rentalDuration = rentalDuration;
+		this.rentalRate = rentalRate;
+		this.length = length;
+		this.replacementCost = replacementCost;
+		this.rating = rating;
+		this.specialFeatures = specialFeatures;
+	}
 
 	public int getId() {
 		return id;
@@ -135,12 +152,11 @@ public class Film {
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Film Info: \n------------------\n Id: " + id + "\n Title: " + title + "\n Description: " + description + "\n Realease Year: " + releaseYear
-				+ "\n Language Id: " + languageId + "\n Rental Duration: " + rentalDuration + "\n Rental Rate: " + rentalRate
-				+ "\n Length: " + length + "\n Replacement Cost: " + replacementCost + "\n Rating: " + rating + "\n Actors:" + actors;
+		return "Film Info: \n------------------\n Title: " + title + "\n Description: " + description + "\n Rating: "
+				+ rating + "\n Language: " + languageName;
 	}
 
 	@Override
@@ -165,7 +181,13 @@ public class Film {
 				&& Double.doubleToLongBits(replacementCost) == Double.doubleToLongBits(other.replacementCost)
 				&& Objects.equals(specialFeatures, other.specialFeatures) && Objects.equals(title, other.title);
 	}
-	
-	
-	
+
+	public String getLanguageName() {
+		return languageName;
+	}
+
+	public void setLanguageName(String languageName) {
+		this.languageName = languageName;
+	}
+
 }
